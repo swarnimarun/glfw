@@ -1,0 +1,43 @@
+# option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
+# option(GLFW_BUILD_EXAMPLES "Build the GLFW example programs" ON)
+# option(GLFW_BUILD_TESTS "Build the GLFW test programs" ON)
+# option(GLFW_BUILD_DOCS "Build the GLFW documentation" ON)
+# option(GLFW_INSTALL "Generate installation target" ON)
+# option(GLFW_VULKAN_STATIC "Use the Vulkan loader statically linked into application" OFF)
+# option(GLFW_DOCUMENT_INTERNALS "Include internals in documentation" OFF)
+
+option('glfw_build_examples',
+    type: 'boolean',
+    description: 'Build the GLFW example programs',
+    value: false)
+
+option('glfw_build_tests',
+    type: 'boolean',
+    description: 'Build the GLFW test programs',
+    value: false)
+
+option('glfw_build_docs',
+    type: 'boolean',
+    description: 'Build the GLFW documentation',
+    value: false)
+
+option('glfw_vulkan_static',
+    type: 'boolean',
+    description: 'Use the Vulkan loader statically linked into application',
+    value: false)
+
+option('glfw_use_hybrid_hpg',
+    type: 'boolean',
+    description: 'Force use of high-performance GPU on hybrid systems',
+    value: false)
+
+option('glfw_use_msvc_runtime_library_dll',
+    type: 'boolean',
+    description: 'Use MSVC runtime library DLL',
+    value: true)
+
+option('glfw_backend',
+    type: 'combo',
+    description: 'Backend used for window creation',
+    value: 'auto',
+    choices: ['auto', 'wayland', 'mir', 'osmesa', 'win32', 'cocoa', 'x11'])
