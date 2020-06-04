@@ -146,8 +146,7 @@ elif backend == 'x11'
     dependencies += [dependency('x11')
                     ,dependency('xrandr')
                     ,dependency('xinerama')
-                    ,dependency('xcursor')
-                    ,dependency('xcb-xkb')]
+                    ,dependency('xcursor')]
     sources += ['x11_init.c',
                 'x11_platform.h',
                 'x11_monitor.c',
