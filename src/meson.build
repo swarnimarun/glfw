@@ -151,8 +151,7 @@ elif backend == 'x11'
                 'x11_monitor.c',
                 'x11_window.c']
 elif backend == 'wayland'
-    dependencies += [dependency('ecm'),
-                     dependency('wayland'),
+    dependencies += [dependency('wayland'),
                      dependency('wayland-scanner'),
                      dependency('wayland-protocols', version: '1.1'),
                      dependency('wayland-egl')]
