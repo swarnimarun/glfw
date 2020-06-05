@@ -191,11 +191,11 @@ elif backend == 'wayland'
 
         foreach output_type: [ 'client-header', 'server-header', 'private-code' ]
             if output_type == 'client-header'
-                output_file = '@0@-client-protocol.h'.format(base_file)
+                output_file = 'wayland-@0@-client-protocol.h'.format(base_file)
             elif output_type == 'server-header'
-                output_file = '@0@-server-protocol.h'.format(base_file)
+                output_file = 'wayland-@0@-server-protocol.h'.format(base_file)
             else
-                output_file = '@0@-protocol.c'.format(base_file)
+                output_file = 'wayland-@0@-protocol.c'.format(base_file)
                 if dep_scanner.version().version_compare('< 1.14.91')
                     output_type = 'code'
                 endif
