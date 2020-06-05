@@ -208,8 +208,9 @@ elif backend == 'wayland'
                 input: xml_path,
                 output: output_file,
             )
-
-            set_variable(var_name, target)
+            if output_type == 'client-header'
+                sources += target
+            endif
         endforeach
     endforeach
 elif backend == 'mir'
