@@ -205,6 +205,7 @@ glfw_library = library('glfw',
                        sources,
                        version: meson.project_version(),
                        c_args: ['-D_GLFW_USE_CONFIG_H'],
+                       objc_args: ['-D_GLFW_USE_CONFIG_H'],
                        dependencies: dependencies,
                        include_directories: [include_directories('../include'),
                                              include_directories('.')])
