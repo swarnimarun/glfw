@@ -13,7 +13,7 @@ jobs:
     - name: Install dependencies
       run: sudo apt-get install libwayland-dev libxkbcommon-dev libegl1-mesa-dev wayland-protocols
     - uses: actions/checkout@v2
-    - uses: actions/setup-python@v1
+    - uses: actions/setup-python@v2
     - uses: BSFishy/meson-build@v1.0.1
       with:
         action: test
