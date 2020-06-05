@@ -32,9 +32,6 @@ foreach b : ['win32',
              'osmesa']
     conf_data.set('_GLFW_'+b.to_upper(), backend == b)
 endforeach
-if host_system == 'darwin'
-    conf_data.set('_GLFW_COCOA', 1)
-endif
 conf_data.set('_GLFW_BUILD_DLL', get_option('default_library') == 'shared')
 conf_data.set('_GLFW_VULKAN_STATIC', get_option('glfw_vulkan_static'))
 conf_data.set('_GLFW_USE_HYBRID_HPG', get_option('glfw_use_hybrid_hpg'))
