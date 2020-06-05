@@ -162,7 +162,7 @@ elif backend == 'wayland'
                 'wl_window.c']
     # Wayland protocol generator
     dep_scanner = dependency('wayland-scanner', native: true)
-    dep_wp = dependency('wayland-protocols', version: '>= 1.17')
+    dep_wp = dependency('wayland-protocols')
     dir_wp_base = dep_wp.get_pkgconfig_variable('pkgdatadir')
     if meson.is_cross_build()
         prog_scanner = find_program('wayland-scanner', dep_scanner.get_pkgconfig_variable('wayland_scanner'))
