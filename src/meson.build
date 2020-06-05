@@ -191,7 +191,11 @@ elif backend == 'wayland'
 
         foreach output_type: [ 'client-header', 'server-header', 'private-code' ]
             if output_type == 'client-header'
-                output_file = 'wayland-@0@-client-protocol.h'.format(proto_name)
+                if proto_name == 'xdg-decoration'
+                    output_file = 'wayland-@0@-client-protocol.h'.format(proto_name)
+                else
+                    output_file = 'wayland-@0@-client-protocol.h'.format(base_file)
+                endif
             elif output_type == 'server-header'
                 output_file = 'wayland-@0@-server-protocol.h'.format(base_file)
             else
