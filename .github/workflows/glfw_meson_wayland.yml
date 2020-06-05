@@ -18,7 +18,7 @@ jobs:
       with:
         action: test
         directory: build
-        setup-options: '-Ddefault_library=both -Dglfw_backend=wayland'
+        setup-options: -Ddefault_library=both, -Dglfw_backend=wayland
         options: --verbose
         meson-version: 0.54.1
         ninja-version: 1.9.0.post1
