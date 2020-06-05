@@ -36,7 +36,6 @@ if backend == 'auto'
         backend = 'win32'
     elif host_system == 'darwin'
         backend = 'cocoa'
-        add_languages('objc')
     elif host_system == 'linux' or host_system == 'bsd'
         backend = 'x11'
     else
@@ -44,6 +43,10 @@ if backend == 'auto'
     endif
 endif
 
+
+if host_system == 'darwin'
+    add_languages('objc')
+endif
 
 #--------------------------------------------------------------------
 # Add subdirectories
