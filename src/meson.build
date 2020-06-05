@@ -199,7 +199,11 @@ elif backend == 'wayland'
             elif output_type == 'server-header'
                 output_file = 'wayland-@0@-server-protocol.h'.format(base_file)
             else
-                output_file = 'wayland-@0@-protocol.c'.format(base_file)
+                if proto_name == 'xdg-decoration'
+                    output_file = 'wayland-@0@-protocol.c'.format(proto_name)
+                else
+                    output_file = 'wayland-@0@-protocol.c'.format(base_file)
+                endif          
                 if dep_scanner.version().version_compare('< 1.14.91')
                     output_type = 'code'
                 endif
@@ -212,9 +216,7 @@ elif backend == 'wayland'
                 input: xml_path,
                 output: output_file,
             )
-            if output_type == 'client-header'
-                sources += target
-            endif
+            sources += target
         endforeach
     endforeach
 elif backend == 'mir'
