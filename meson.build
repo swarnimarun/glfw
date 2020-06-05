@@ -34,9 +34,9 @@ backend = get_option('glfw_backend')
 if backend == 'auto'
     if host_system == 'windows' or host_system == 'cygwin'
         backend = 'win32'
-        add_languages('objc')
     elif host_system == 'darwin'
         backend = 'cocoa'
+        add_languages('objc')
     elif host_system == 'linux' or host_system == 'bsd'
         backend = 'x11'
     else
