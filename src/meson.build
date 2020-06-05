@@ -151,9 +151,11 @@ elif backend == 'x11'
                 'x11_monitor.c',
                 'x11_window.c']
 elif backend == 'wayland'
-    dependencies += [dependency('wayland'),
+    dependencies += [dependency('wayland-client'),
                      dependency('wayland-scanner'),
-                     dependency('wayland-protocols', version: '1.1'),
+                     dependency('wayland-cursor'),
+                     dependency('wayland-server'),
+                     dependency('xkbcommon'),
                      dependency('wayland-egl')]
     sources += ['wl_init.c',
                 'wl_platform.h',
